@@ -17,9 +17,9 @@ namespace LibThreads.Utils
                     item.Text = value;
                 }
 
-                public static void Async(System.Windows.Forms.Control item, string value)
+                public static Task Async(System.Windows.Forms.Control item, string value)
                 {
-                    Task.Run(() => Sync(item, value));
+                    return Task.Run(() => Sync(item, value));
                 }
 
                 public static void Sync(System.Windows.Forms.Control item, string value)
@@ -54,9 +54,9 @@ namespace LibThreads.Utils
                     item.Visible = value;
                 }
 
-                public static void Async(System.Windows.Forms.Control item, bool value)
+                public static Task Async(System.Windows.Forms.Control item, bool value)
                 {
-                    Task.Run(() => Sync(item, value));
+                    return Task.Run(() => Sync(item, value));
                 }
 
                 public static void Sync(System.Windows.Forms.Control item, bool value)
@@ -91,9 +91,9 @@ namespace LibThreads.Utils
                     item.Enabled = value;
                 }
 
-                public static void Async(System.Windows.Forms.Control item, bool value)
+                public static Task Async(System.Windows.Forms.Control item, bool value)
                 {
-                    Task.Run(() => Sync(item, value));
+                    return Task.Run(() => Sync(item, value));
                 }
 
                 public static void Sync(System.Windows.Forms.Control item, bool value)
@@ -152,9 +152,9 @@ namespace LibThreads.Utils
                     item.Select();
                 }
 
-                public static void Async(System.Windows.Forms.Control item)
+                public static Task Async(System.Windows.Forms.Control item)
                 {
-                    Task.Run(() => Sync(item));
+                    return Task.Run(() => Sync(item));
                 }
 
                 public static void Sync(System.Windows.Forms.Control item)
@@ -189,9 +189,9 @@ namespace LibThreads.Utils
                     item.Focus();
                 }
 
-                public static void Async(System.Windows.Forms.Control item)
+                public static Task Async(System.Windows.Forms.Control item)
                 {
-                    Task.Run(() => Sync(item));
+                    return Task.Run(() => Sync(item));
                 }
 
                 public static void Sync(System.Windows.Forms.Control item)
