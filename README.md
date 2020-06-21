@@ -9,3 +9,8 @@ NUnit tests for Console.Example.Threads project.
 
 ## LibThreadsTests project
 NUnit tests for LibThreads project.
+
+## WinForms.Example.Threads project
+
+## WinForms.Example.ThreadsTests project
+NUnit tests for WinForms.Example.Threads project.
