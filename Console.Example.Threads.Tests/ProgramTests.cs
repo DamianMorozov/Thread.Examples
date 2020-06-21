@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Console.Example.Threads;
 using NUnit.Framework;
 
 namespace Console.Example.ThreadsTests
@@ -35,16 +36,16 @@ namespace Console.Example.ThreadsTests
         }
 
         [Test]
-        public void Main_AreEqual()
+        public void Main_Execute_NoException()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Main_AreEqual)} start.");
+            TestContext.WriteLine($@"{nameof(Main_Execute_NoException)} start.");
             var sw = Stopwatch.StartNew();
 
-            Assert.AreEqual(0, 0);
+            Assert.DoesNotThrow(Program.Main);
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Main_AreEqual)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Main_Execute_NoException)} complete. Elapsed time: {sw.Elapsed}");
         }
     }
 }
