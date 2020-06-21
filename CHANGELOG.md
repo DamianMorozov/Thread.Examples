@@ -2,7 +2,7 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [0.01.10] - 2020-06-21
+## [0.01.20] - 2020-06-21
 ### Added
   [+] .gitattributes
   [+] .gitignore
@@ -11,3 +11,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   [+] LICENSE
   [+] README.md
   [+] Console.Example.Threads project
+  [+] Console.Example.ThreadsTests project
+  [+] LibThreads project
+  [+] LibThreadsTests project
