@@ -37,6 +37,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\ProgressBar.cs" />
     <Compile Include="Utils\Control.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

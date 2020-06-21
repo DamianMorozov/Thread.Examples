@@ -24,23 +24,16 @@ namespace LibThreads.Utils
 
                 public static void Sync(System.Windows.Forms.Control item, string value)
                 {
-                    try
+                    if (item != null)
                     {
-                        if (item != null)
+                        if (item.InvokeRequired)
                         {
-                            if (item.InvokeRequired)
-                            {
-                                item.BeginInvoke(new SetDelegate(SetWork), item, value);
-                            }
-                            else
-                            {
-                                SetWork(item, value);
-                            }
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        //
+                        else
+                        {
+                            SetWork(item, value);
+                        }
                     }
                 }
             }
@@ -61,23 +54,16 @@ namespace LibThreads.Utils
 
                 public static void Sync(System.Windows.Forms.Control item, bool value)
                 {
-                    try
+                    if (item != null)
                     {
-                        if (item != null)
+                        if (item.InvokeRequired)
                         {
-                            if (item.InvokeRequired)
-                            {
-                                item.BeginInvoke(new SetDelegate(SetWork), item, value);
-                            }
-                            else
-                            {
-                                SetWork(item, value);
-                            }
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        //
+                        else
+                        {
+                            SetWork(item, value);
+                        }
                     }
                 }
             }
@@ -98,23 +84,16 @@ namespace LibThreads.Utils
 
                 public static void Sync(System.Windows.Forms.Control item, bool value)
                 {
-                    try
+                    if (item != null)
                     {
-                        if (item != null)
+                        if (item.InvokeRequired)
                         {
-                            if (item.InvokeRequired)
-                            {
-                                item.BeginInvoke(new SetDelegate(SetWork), item, value);
-                            }
-                            else
-                            {
-                                SetWork(item, value);
-                            }
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        //
+                        else
+                        {
+                            SetWork(item, value);
+                        }
                     }
                 }
             }
@@ -159,23 +138,16 @@ namespace LibThreads.Utils
 
                 public static void Sync(System.Windows.Forms.Control item)
                 {
-                    try
+                    if (item != null)
                     {
-                        if (item != null)
+                        if (item.InvokeRequired)
                         {
-                            if (item.InvokeRequired)
-                            {
-                                item.BeginInvoke(new SetDelegate(SetWork), item);
-                            }
-                            else
-                            {
-                                SetWork(item);
-                            }
+                            item.BeginInvoke(new SetDelegate(SetWork), item);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        //
+                        else
+                        {
+                            SetWork(item);
+                        }
                     }
                 }
             }
@@ -196,23 +168,16 @@ namespace LibThreads.Utils
 
                 public static void Sync(System.Windows.Forms.Control item)
                 {
-                    try
+                    if (item != null)
                     {
-                        if (item != null)
+                        if (item.InvokeRequired)
                         {
-                            if (item.InvokeRequired)
-                            {
-                                item.BeginInvoke(new SetDelegate(SetWork), item);
-                            }
-                            else
-                            {
-                                SetWork(item);
-                            }
+                            item.BeginInvoke(new SetDelegate(SetWork), item);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        //
+                        else
+                        {
+                            SetWork(item);
+                        }
                     }
                 }
             }
