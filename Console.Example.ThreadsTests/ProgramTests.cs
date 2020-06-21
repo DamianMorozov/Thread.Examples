@@ -211,11 +211,7 @@ namespace Console.Example.ThreadsTests
             TestContext.WriteLine($@"{nameof(Method03DisplayResultAsync_Execute_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
-            for (var i = 0; i < MAX_COUNT; i++)
-            {
-                var num = i;
-                Assert.DoesNotThrowAsync(Program.Method03DisplayResultAsync);
-            }
+            Assert.DoesNotThrowAsync(Program.Method03DisplayResultAsync);
 
             sw.Stop();
             TestContext.WriteLine($@"{nameof(Method03DisplayResultAsync_Execute_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");

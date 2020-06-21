@@ -165,7 +165,8 @@ namespace Console.Example.Threads
             System.Console.WriteLine(@"Main() call async Task DisplayResultAsync().Wait().");
             System.Console.WriteLine(@"----------------------------------------------------------------------");
 
-            await Method02DisplayResultAsync();
+            var task = Method02DisplayResultAsync();
+            task.Wait();
 
             System.Console.WriteLine(@"Main method is finished.");
         }
