@@ -43,6 +43,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\ProgressBarTests.cs" />
     <Compile Include="Utils\ControlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

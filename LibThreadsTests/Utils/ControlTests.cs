@@ -41,10 +41,10 @@ namespace LibThreadsTests.Utils
         }
 
         [Test]
-        public void Properties_SetEnabled_NoException()
+        public void Properties_SetEnabled_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Properties_SetEnabled_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Properties_SetEnabled_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -56,14 +56,14 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Properties_SetEnabled_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Properties_SetEnabled_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
-        public void Properties_SetText_NoException()
+        public void Properties_SetText_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Properties_SetText_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Properties_SetText_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -77,14 +77,14 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Properties_SetText_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Properties_SetText_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
-        public void Properties_SetVisible_NoException()
+        public void Properties_SetVisible_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Properties_SetVisible_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Properties_SetVisible_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -96,14 +96,14 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Properties_SetVisible_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Properties_SetVisible_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
-        public void Methods_Focus_NoException()
+        public void Methods_Focus_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Methods_Focus_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Methods_Focus_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -113,14 +113,14 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Methods_Focus_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Methods_Focus_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
-        public void Methods_Select_NoException()
+        public void Methods_Select_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Methods_Select_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Methods_Select_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -130,14 +130,14 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Methods_Select_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Methods_Select_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
-        public void Methods_SetDoubleBuffered_NoException()
+        public void Methods_SetDoubleBuffered_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
-            TestContext.WriteLine($@"{nameof(Methods_SetDoubleBuffered_NoException)} start.");
+            TestContext.WriteLine($@"{nameof(Methods_SetDoubleBuffered_DoesNotThrow)} start.");
             var sw = Stopwatch.StartNew();
 
             foreach (var control in _controls)
@@ -146,7 +146,7 @@ namespace LibThreadsTests.Utils
             }
 
             sw.Stop();
-            TestContext.WriteLine($@"{nameof(Methods_SetDoubleBuffered_NoException)} complete. Elapsed time: {sw.Elapsed}");
+            TestContext.WriteLine($@"{nameof(Methods_SetDoubleBuffered_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
     }
 }
