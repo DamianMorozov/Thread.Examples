@@ -165,8 +165,7 @@ namespace Console.Example.Threads
             System.Console.WriteLine(@"Main() call async Task DisplayResultAsync().Wait().");
             System.Console.WriteLine(@"----------------------------------------------------------------------");
 
-            var task = Method02DisplayResultAsync();
-            task.Wait();
+            await Method02DisplayResultAsync();
 
             System.Console.WriteLine(@"Main method is finished.");
         }
@@ -457,7 +456,7 @@ namespace Console.Example.Threads
 
             var num = 8;
 
-            var result = (int)Method07RunSomeMethodsAsync(() => Method07FactorialAsync(num)).GetAwaiter().GetResult();
+            var result = Method07RunSomeMethodsAsync(() => Method07FactorialAsync(num)).GetAwaiter().GetResult();
 
             System.Console.WriteLine("Time of calculation: " + Convert.ToString(DateTime.Now - dtStart));
             System.Console.WriteLine("Factorial of a number {0} = {1}", num, result);
@@ -472,7 +471,7 @@ namespace Console.Example.Threads
                 T result = default;
                 if (func() is Task<T> funcInt)
                 {
-                    result = (T)funcInt.GetAwaiter().GetResult();
+                    result = funcInt.GetAwaiter().GetResult();
                 }
                 return result;
             });
