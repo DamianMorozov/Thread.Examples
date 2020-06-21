@@ -15,8 +15,9 @@ namespace LibThreads.Utils
                 private static void SetWork(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10)
                 {
                     item.Value = value;
-                    System.Windows.Forms.Application.DoEvents();
-                    System.Threading.Thread.Sleep(sleepTimeOutMs);
+                    //System.Windows.Forms.Application.DoEvents();
+                    //System.Threading.Thread.Sleep(sleepTimeOutMs);
+                    Task.Delay(sleepTimeOutMs);
                 }
 
                 public static Task Async(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10)
