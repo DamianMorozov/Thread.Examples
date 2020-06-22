@@ -10,19 +10,20 @@ namespace LibThreads.Utils
         {
             public static class SetValue
             {
-                private delegate void SetDelegate(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10);
+                private delegate void SetDelegate(System.Windows.Forms.ProgressBar item, int value);
 
-                private static void SetWork(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10)
+                private static void SetWork(System.Windows.Forms.ProgressBar item, int value)
                 {
                     item.Value = value;
-                    //System.Windows.Forms.Application.DoEvents();
-                    //System.Threading.Thread.Sleep(sleepTimeOutMs);
-                    Task.Delay(sleepTimeOutMs);
                 }
 
                 public static Task Async(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10)
                 {
-                    return Task.Run(() => Sync(item, value));
+                    return Task.Run(() => 
+                    {
+                        Sync(item, value);
+                        Task.Delay(sleepTimeOutMs);
+                    });
                 }
 
                 public static void Sync(System.Windows.Forms.ProgressBar item, int value, int sleepTimeOutMs = 10)
@@ -31,11 +32,13 @@ namespace LibThreads.Utils
                     {
                         if (item.InvokeRequired)
                         {
-                            item.BeginInvoke(new SetDelegate(SetWork), item, value, sleepTimeOutMs);
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
                         }
                         else
                         {
-                            SetWork(item, value, sleepTimeOutMs);
+                            SetWork(item, value);
+                            System.Windows.Forms.Application.DoEvents();
+                            System.Threading.Thread.Sleep(sleepTimeOutMs);
                         }
                     }
                 }
