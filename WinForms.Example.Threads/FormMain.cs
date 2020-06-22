@@ -19,23 +19,7 @@ namespace WinForms.Example.Threads
 
         private void buttonTaskRun_Click(object sender, System.EventArgs e)
         {
-            MethodTaskRunAsync();
-        }
-
-        private void MethodTaskRunAsync()
-        {
-            LibThreads.Utils.ProgressBar.Properties.SetValue.Sync(progressBar, 0);
-            LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
-            Task.Run(() =>
-            {
-                while (progressBar.Value < 100)
-                {
-                    LibThreads.Utils.ProgressBar.Properties.SetValue.Sync(progressBar, progressBar.Value + 1, 100);
-                    LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
-                    System.Threading.Thread.Sleep(100);
-                }
-                LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
-            });
+            Task.Run(() => { StartProgress(); });
         }
 
         private void comboBoxProgressBarStyle_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -52,6 +36,24 @@ namespace WinForms.Example.Threads
                     progressBar.SetState(1);
                     break;
             }
+        }
+
+        private void StartProgress()
+        {
+            LibThreads.Utils.ProgressBar.Properties.SetValue.Sync(progressBar, 0);
+            LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+            while (progressBar.Value < 100)
+            {
+                LibThreads.Utils.ProgressBar.Properties.SetValue.Sync(progressBar, progressBar.Value + 1, 100);
+                LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+                System.Threading.Thread.Sleep(100);
+            }
+            LibThreads.Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+        }
+
+        private void buttonStartProgress_Click(object sender, System.EventArgs e)
+        {
+            StartProgress();
         }
     }
 }
