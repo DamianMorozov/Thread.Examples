@@ -2,6 +2,10 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.01.36] - 2020-06-23
+### Updated
+  [+] LibThreads\Utils\ProgressBar.cs
+
 ## [0.01.35] - 2020-06-22
 ### Added
   [+] LibThreads\Utils\PictureBox.cs
