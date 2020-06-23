@@ -12,6 +12,8 @@ namespace LibThreadsTests.Utils
 
         #endregion
 
+        #region Setup & teardown
+
         /// <summary>
         /// Setup private fields.
         /// </summary>
@@ -39,6 +41,10 @@ namespace LibThreadsTests.Utils
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");
         }
 
+        #endregion
+
+        #region Public properties
+
         [Test]
         public void Properties_SetValue_DoesNotThrow()
         {
@@ -51,6 +57,34 @@ namespace LibThreadsTests.Utils
 
             sw.Stop();
             TestContext.WriteLine($@"{nameof(Properties_SetValue_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
+        }
+
+        [Test]
+        public void Properties_SetMinimum_DoesNotThrow()
+        {
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine($@"{nameof(Properties_SetMinimum_DoesNotThrow)} start.");
+            var sw = Stopwatch.StartNew();
+
+            Assert.DoesNotThrow(() => LibThreads.Utils.ProgressBar.Properties.SetMinimum.Sync(_progressBar, 0));
+            Assert.DoesNotThrowAsync(() => LibThreads.Utils.ProgressBar.Properties.SetMinimum.Async(_progressBar, 0));
+
+            sw.Stop();
+            TestContext.WriteLine($@"{nameof(Properties_SetMinimum_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
+        }
+
+        [Test]
+        public void Properties_SetMaximum_DoesNotThrow()
+        {
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine($@"{nameof(Properties_SetMaximum_DoesNotThrow)} start.");
+            var sw = Stopwatch.StartNew();
+
+            Assert.DoesNotThrow(() => LibThreads.Utils.ProgressBar.Properties.SetMaximum.Sync(_progressBar, 0));
+            Assert.DoesNotThrowAsync(() => LibThreads.Utils.ProgressBar.Properties.SetMaximum.Async(_progressBar, 0));
+
+            sw.Stop();
+            TestContext.WriteLine($@"{nameof(Properties_SetMaximum_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
 
         [Test]
@@ -67,5 +101,7 @@ namespace LibThreadsTests.Utils
             sw.Stop();
             TestContext.WriteLine($@"{nameof(Properties_SetValue_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
         }
+
+        #endregion
     }
 }
