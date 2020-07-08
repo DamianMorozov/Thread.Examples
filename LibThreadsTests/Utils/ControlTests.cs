@@ -100,6 +100,46 @@ namespace LibThreadsTests.Utils
         }
 
         [Test]
+        public void Properties_SetBackColor_DoesNotThrow()
+        {
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine($@"{nameof(Properties_SetBackColor_DoesNotThrow)} start.");
+            var sw = Stopwatch.StartNew();
+
+            foreach (var control in _controls)
+            {
+                var color = System.Drawing.Color.Yellow;
+                Assert.DoesNotThrow(() => LibThreads.Utils.Control.Properties.SetBackColor.Sync(control, color));
+                Assert.DoesNotThrowAsync(() => LibThreads.Utils.Control.Properties.SetBackColor.Async(control, color));
+                Assert.DoesNotThrow(() => LibThreads.Utils.Control.Properties.SetBackColor.Sync(control, color));
+                Assert.DoesNotThrowAsync(() => LibThreads.Utils.Control.Properties.SetBackColor.Async(control, color));
+            }
+
+            sw.Stop();
+            TestContext.WriteLine($@"{nameof(Properties_SetBackColor_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
+        }
+
+        [Test]
+        public void Properties_SetForeColor_DoesNotThrow()
+        {
+            TestContext.WriteLine(@"--------------------------------------------------------------------------------");
+            TestContext.WriteLine($@"{nameof(Properties_SetForeColor_DoesNotThrow)} start.");
+            var sw = Stopwatch.StartNew();
+
+            foreach (var control in _controls)
+            {
+                var color = System.Drawing.Color.Yellow;
+                Assert.DoesNotThrow(() => LibThreads.Utils.Control.Properties.SetForeColor.Sync(control, color));
+                Assert.DoesNotThrowAsync(() => LibThreads.Utils.Control.Properties.SetForeColor.Async(control, color));
+                Assert.DoesNotThrow(() => LibThreads.Utils.Control.Properties.SetForeColor.Sync(control, color));
+                Assert.DoesNotThrowAsync(() => LibThreads.Utils.Control.Properties.SetForeColor.Async(control, color));
+            }
+
+            sw.Stop();
+            TestContext.WriteLine($@"{nameof(Properties_SetForeColor_DoesNotThrow)} complete. Elapsed time: {sw.Elapsed}");
+        }
+
+        [Test]
         public void Methods_Focus_DoesNotThrow()
         {
             TestContext.WriteLine(@"--------------------------------------------------------------------------------");

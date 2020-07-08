@@ -1,9 +1,10 @@
-﻿using System.Reflection;
+﻿using System.Drawing;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace LibThreads.Utils
 {
-    public class Control
+    public static class Control
     {
         public static class Properties
         {
@@ -82,6 +83,66 @@ namespace LibThreads.Utils
                 }
 
                 public static void Sync(System.Windows.Forms.Control item, bool value)
+                {
+                    if (item != null)
+                    {
+                        if (item.InvokeRequired)
+                        {
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
+                        }
+                        else
+                        {
+                            SetWork(item, value);
+                        }
+                    }
+                }
+            }
+
+            public static class SetBackColor
+            {
+                private delegate void SetDelegate(System.Windows.Forms.Control item, Color value);
+
+                private static void SetWork(System.Windows.Forms.Control item, Color value)
+                {
+                    item.BackColor = value;
+                }
+
+                public static Task Async(System.Windows.Forms.Control item, Color value)
+                {
+                    return Task.Run(() => Sync(item, value));
+                }
+
+                public static void Sync(System.Windows.Forms.Control item, Color value)
+                {
+                    if (item != null)
+                    {
+                        if (item.InvokeRequired)
+                        {
+                            item.BeginInvoke(new SetDelegate(SetWork), item, value);
+                        }
+                        else
+                        {
+                            SetWork(item, value);
+                        }
+                    }
+                }
+            }
+
+            public static class SetForeColor
+            {
+                private delegate void SetDelegate(System.Windows.Forms.Control item, Color value);
+
+                private static void SetWork(System.Windows.Forms.Control item, Color value)
+                {
+                    item.ForeColor = value;
+                }
+
+                public static Task Async(System.Windows.Forms.Control item, Color value)
+                {
+                    return Task.Run(() => Sync(item, value));
+                }
+
+                public static void Sync(System.Windows.Forms.Control item, Color value)
                 {
                     if (item != null)
                     {
