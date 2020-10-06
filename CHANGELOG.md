@@ -6,10 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.40] - 2020-10-06
+## [0.1.42] - 2020-10-06
 - .gitattributes
 - .gitignore
 - LICENSE
+- README.md
 
 ## [0.01.38] - 2020-07-08
 ### Changed

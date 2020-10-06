@@ -1,16 +1,9 @@
-﻿# Examples of System.Threads
+﻿# Thread examples
 
-## Console.Example.Threads project
-
-## Console.Example.ThreadsTests project
-NUnit tests for Console.Example.Threads project.
-
-## LibThreads project
-
-## LibThreadsTests project
-NUnit tests for LibThreads project.
-
-## WinForms.Example.Threads project
-
-## WinForms.Example.ThreadsTests project
-NUnit tests for WinForms.Example.Threads project.
+## Contents
+- Console.Example.Threads
+- Console.Example.ThreadsTests
+- LibThreads
+- LibThreadsTests
+- WinForms.Example.Threads
+- WinForms.Example.ThreadsTests
