@@ -6,11 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.42] - 2020-10-06
+## [0.1.50] - 2020-10-06
+### Changed
 - .gitattributes
 - .gitignore
 - LICENSE
 - README.md
+- Console.Examples
+- Console.Examples.Tests
+- WinForms.Examples
+- WinForms.Examples.Tests
+- WinForms.Utils
+- WinForms.Utils.Tests
 
 ## [0.01.38] - 2020-07-08
 ### Changed
