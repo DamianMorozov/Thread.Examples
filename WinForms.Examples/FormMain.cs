@@ -14,7 +14,7 @@ namespace WinForms.Examples
         private void FormMain_Load(object sender, System.EventArgs e)
         {
             comboBoxProgressBarStyle.SelectedIndex = 0;
-            Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+            InvokeControl.SetText(labelValue, $"{progressBar.Value} %");
         }
 
         private void buttonTaskRun_Click(object sender, System.EventArgs e)
@@ -40,15 +40,15 @@ namespace WinForms.Examples
 
         private void StartProgress()
         {
-            Utils.ProgressBar.Properties.SetValue.Sync(progressBar, 0);
-            Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+            InvokeProgressBar.SetValue(progressBar, 0);
+            InvokeControl.SetText(labelValue, $"{progressBar.Value} %");
             while (progressBar.Value < 100)
             {
-                Utils.ProgressBar.Properties.SetValue.Sync(progressBar, progressBar.Value + 1, 100);
-                Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+                InvokeProgressBar.SetValue(progressBar, progressBar.Value + 1);
+                InvokeControl.SetText(labelValue, $"{progressBar.Value} %");
                 System.Threading.Thread.Sleep(100);
             }
-            Utils.Control.Properties.SetText.Sync(labelValue, $"{progressBar.Value} %");
+            InvokeControl.SetText(labelValue, $"{progressBar.Value} %");
         }
 
         private void buttonStartProgress_Click(object sender, System.EventArgs e)
